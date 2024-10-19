@@ -1,4 +1,3 @@
-
 bool sdcardMounted = false;
 #if defined(SDCARD)
   #include <FS.h>

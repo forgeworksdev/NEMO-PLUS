@@ -1,5 +1,5 @@
-// Nemo Firmware for the M5 Stack Stick C Plus
-// github.com/n0xa | IG: @4x0nn
+// Rakatak Firmware for the M5 Stack Stick C Plus
+// https://github.com/Max9th
 
 //Nemo+ beta code
 //github.com/max9th
@@ -235,7 +235,7 @@ const String contributors[] PROGMEM = {
   "@unagironin",
   "@vladimirpetrov",
   "@vs4vijay",
-  "Nemo++",
+  "Rakatak:",
   "Max9th"
 }; // Defines the names of the contributors
 
