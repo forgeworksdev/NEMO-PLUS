@@ -24,7 +24,7 @@ uint16_t BGCOLOR=0x0001; // placeholder
 uint16_t FGCOLOR=0xFFF1; // placeholder
 
 #ifndef VERSION
-  #define "RAKATAK"
+  #define VERSION "RAKATAK"
 #endif
 
 #if !defined(CARDPUTER) && !defined(STICK_C_PLUS2) && !defined(STICK_C_PLUS) && !defined(STICK_C)
@@ -75,100 +75,6 @@ uint16_t FGCOLOR=0xFFF1; // placeholder
   #define SD_CS_PIN 14 //can be -1, but sends a lot of messages of error in serial monitor
   #define M5LED_ON HIGH
   #define M5LED_OFF LOW
-#endif
-
-#if defined(STICK_C_PLUS)
-  #include <M5StickCPlus.h>
-  // -=-=- Display -=-=-
-  String platformName="StickC+";
-  #define BIG_TEXT 4
-  #define MEDIUM_TEXT 3
-  #define SMALL_TEXT 2
-  #define TINY_TEXT 1
-
-  // -=-=- FEATURES -=-=-
-  #define M5LED 10
-  #define RTC
-  #define AXP
-  #define ACTIVE_LOW_IR
-  #define ROTATION
-  #define USE_EEPROM
-  //#define SDCARD   //Requires a custom-built adapter
-
-  // -=-=- ALIASES -=-=- //place the BITMAP varibale here 
-  #define DISP M5.Lcd
-  #define IRLED 9
-  #define SPEAKER M5.Beep
-  #define BITMAP Serial.println("unsupported")
-  #define SD_CLK_PIN 0
-  #define SD_MISO_PIN 36
-  #define SD_MOSI_PIN 26
-  #define SD_CS_PIN -1 //can be 14, to avoid serial messages
-  #define M5LED_ON LOW
-  #define M5LED_OFF HIGH
-#endif
-
-#if defined(STICK_C)
-  #include <M5StickC.h>
-
-  // -=-=- Display -=-=-
-  String platformName="StickC";
-  #define BIG_TEXT 2
-  #define MEDIUM_TEXT 2
-  #define SMALL_TEXT 1
-  #define TINY_TEXT 1
-
-  // -=-=- FEATURES -=-=-
-  #define M5LED 10
-  #define RTC
-  #define AXP
-  #define ROTATION
-  #define USE_EEPROM
-  #define SDCARD   //Requires a custom-built adapter
-
-  // -=-=- ALIASES -=-=-
-  #define DISP M5.Lcd
-  #define IRLED 9
-  #define BITMAP Serial.println("unsupported")
-  #define SD_CLK_PIN 0
-  #define SD_MISO_PIN 36
-  #define SD_MOSI_PIN 26
-  #define SD_CS_PIN -1 //can be 14, to avoid serial messages
-  #define M5LED_ON LOW
-  #define M5LED_OFF HIGH
-#endif
-
-#if defined(CARDPUTER)
-  #include <M5Cardputer.h>
-  
-  // -=-=- Display -=-=-
-  String platformName="Cardputer";
-  #define BIG_TEXT 4
-  #define MEDIUM_TEXT 3
-  #define SMALL_TEXT 2
-  #define TINY_TEXT 1
-
-  // -=-=- FEATURES -=-=-
-  #define KB
-  #define HID
-  #define ACTIVE_LOW_IR
-  #define USE_EEPROM
-  #define SDCARD
-
-  // -=-=- ALIASES -=-=-
-  #define DISP M5Cardputer.Display
-  #define IRLED 44
-  #define BACKLIGHT 38
-  #define MINBRIGHT 165
-  #define SPEAKER M5Cardputer.Speaker
-  #define BITMAP M5Cardputer.Display.drawBmp(NEMOMatrix, 97338)
-  #define SD_CLK_PIN 40
-  #define SD_MISO_PIN 39
-  #define SD_MOSI_PIN 14
-  #define SD_CS_PIN 12
-  #define VBAT_PIN 10
-  #define M5LED_ON LOW
-  #define M5LED_OFF HIGH
 #endif
 
 // -=-=-=-=-=- LIST OF CURRENTLY DEFINED FEATURES -=-=-=-=-=-
@@ -1833,7 +1739,7 @@ void credits_setup(){
   DISP.setCursor(0, 10);
   DISP.print("NEMO++\n");
   DISP.setTextSize(SMALL_TEXT);
-  DISP.printf("  %s\n",NEMO_VERSION);
+  DISP.printf("  %s\n",VERSION);
   DISP.println(" For M5Stack");
   DISP.printf(" %s\n\n", platformName);
   DISP.println("Contributors:");
